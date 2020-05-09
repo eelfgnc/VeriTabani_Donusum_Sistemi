@@ -1,0 +1,75 @@
+CREATE TABLE tabol_cihaz_tanim (
+x_id		int	SERIAL	NOT NULL,
+x_kod		varchar(20)	NULL,
+x_adi		varchar(50)	NULL,
+x_firma_id		int	NULL,
+x_marka		int	NULL,
+x_model		int	NULL,
+x_ulke		int	NULL,
+x_il		int	NULL,
+x_ilce		int	NULL,
+x_acik_adres		varchar(512)	NULL,
+x_cuser		int	NULL,
+x_cdate		timestamp(0)	NULL,
+x_muser		int	NULL,
+x_mdate		timestamp(0)	NULL,
+x_udf		text	NULL,
+x_udf_grp		varchar(512)	NULL,
+x_priority		int	NULL,
+x_test		text	NULL,
+CONSTRAINT PK_tabol_cihaz_tanim PRIMARY KEY  (x_id)) GO
+
+CREATE TABLE tabol_cihaz_telefon (
+x_id		int	SERIAL	NOT NULL,
+x_cihaz_id		int	NULL,
+x_tel		varchar(50)	NULL,
+x_ack		varchar(100)	NULL,
+x_cuser		int	NULL,
+x_cdate		timestamp(3)	NULL,
+x_muser		int	NULL,
+x_mdate		timestamp(3)	NULL,
+CONSTRAINT PK_tabol_cihaz_telefon PRIMARY KEY  (x_id)) GO
+
+CREATE TABLE tabol_cihaz_zone (
+x_id		int	SERIAL	NOT NULL,
+x_cihaz_id		int	NULL,
+x_zone_kod		varchar(50)	NULL,
+x_ack		varchar(100)	NULL,
+x_cuser		int	NULL,
+x_cdate		timestamp(3)	NULL,
+x_muser		int	NULL,
+x_mdate		timestamp(3)	NULL,
+CONSTRAINT PK_tabol_cihaz_zone PRIMARY KEY  (x_id)) GO
+
+CREATE TABLE tabol_cihaz_kisi (
+x_id		int	SERIAL	NOT NULL,
+x_cihaz_id		int	NULL,
+x_firma_id		int	NULL,
+x_kisi_id		int	NULL,
+x_sira		int	NULL,
+x_cuser		int	NULL,
+x_cdate		timestamp(3)	NULL,
+x_muser		int	NULL,
+x_mdate		timestamp(3)	NULL,
+CONSTRAINT PK_tabol_cihaz_kisi PRIMARY KEY  (x_id)) GO
+
+CREATE TABLE tabol_marka (
+x_id		int	SERIAL	NOT NULL,
+x_kod		varchar(20)	NULL,
+x_adi		varchar(50)	NULL,
+x_cuser		int	NULL,
+x_cdate		timestamp(0)	NULL,
+x_muser		int	NULL,
+x_mdate		timestamp(0)	NULL,
+CONSTRAINT PK_tabol_marka PRIMARY KEY  (x_id)) GO
+
+CREATE TABLE tabol_marka_det (
+x_id		int	SERIAL	NOT NULL,
+x_mas_id		int	NULL,
+x_kod		varchar(20)	NULL,
+x_adi		varchar(50)	NULL,
+x_cuser		int	NULL,
+x_cdate		timestamp(0)	NULL,
+x_muser		int	NULL,
+x_mdate		timestamp(0)	NULL,
+CONSTRAINT PK_tabol_marka_det PRIMARY KEY  (x_id)) GO
